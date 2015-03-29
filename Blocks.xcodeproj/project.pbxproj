@@ -14,6 +14,7 @@
 		3087B6161AC8626000658518 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3087B6151AC8626000658518 /* Images.xcassets */; };
 		3087B6191AC8626000658518 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3087B6171AC8626000658518 /* LaunchScreen.xib */; };
 		3087B6251AC8626100658518 /* BlocksTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3087B6241AC8626100658518 /* BlocksTests.m */; };
+		3087B6301AC87E1900658518 /* ASObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 3087B62F1AC87E1900658518 /* ASObject.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,8 @@
 		3087B61E1AC8626100658518 /* BlocksTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BlocksTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3087B6231AC8626100658518 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3087B6241AC8626100658518 /* BlocksTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BlocksTests.m; sourceTree = "<group>"; };
+		3087B62E1AC87E0C00658518 /* ASObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASObject.h; sourceTree = "<group>"; };
+		3087B62F1AC87E1900658518 /* ASObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASObject.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +92,8 @@
 				3087B6151AC8626000658518 /* Images.xcassets */,
 				3087B6171AC8626000658518 /* LaunchScreen.xib */,
 				3087B6081AC8626000658518 /* Supporting Files */,
+				3087B62E1AC87E0C00658518 /* ASObject.h */,
+				3087B62F1AC87E1900658518 /* ASObject.m */,
 			);
 			path = Blocks;
 			sourceTree = "<group>";
@@ -219,6 +224,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3087B6301AC87E1900658518 /* ASObject.m in Sources */,
 				3087B6111AC8626000658518 /* ViewController.m in Sources */,
 				3087B60E1AC8626000658518 /* AppDelegate.m in Sources */,
 				3087B60B1AC8626000658518 /* main.m in Sources */,

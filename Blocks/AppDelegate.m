@@ -7,8 +7,15 @@
 //
 
 #import "AppDelegate.h"
+#import "ASObject.h"
+
+typedef void(^OurTestBlock)(void);
+typedef NSString* (^OurTestBlock2)(NSInteger);
 
 @interface AppDelegate ()
+
+@property(copy, nonatomic) OurTestBlock block;
+@property(strong, nonatomic) NSString* name;
 
 @end
 
@@ -17,7 +24,114 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+   
+   /*
+    [self test];
+    void (^testBlock)(void);
+    testBlock = ^{
+        NSLog(@"testBlock");
+    };
+    
+    void (^testBlockWithParams)(NSString*, NSInteger*) = ^(NSString* string, NSInteger * intValue){
+        NSLog(@"%@ %d", string, intValue);
+    };
+    
+    testBlockWithParams(@"dwrv", 34);
+    testBlock();
+    testBlock();
+    
+    
+    
+    NSString* (^testBlockWithReturnValue)(NSString*) = ^(NSString* string){
+        return [NSString stringWithFormat:@"returns string %@", string];
+    };
+    
+    testBlockWithReturnValue(@"234");
+    
+  
+    
+    
+    NSString* str = @"secret";
+    
+    __block NSInteger sum = 0; // for changing value in block use __block
+    
+    void (^printAndSet)(void);
+    
+    printAndSet = ^{
+        sum++;
+        NSLog(@"i know your %@ %ld times", str, (long)sum);
+    };
+    
+    printAndSet();
+    
+    [self testBlockMethod:^{
+        NSLog(@"Ahtung!");
+    }];
+    
+    NSComparisonResult (^compare)(id, id) = ^(id obj1, id obj2){ //compare block
+        return NSOrderedAscending;
+    };
+    
+    NSArray* ar = nil;
+    [ar sortedArrayUsingComparator:compare]; // using our comparator
+    
+    OurTestBlock testblock2 = ^{
+        
+    };
+    
+    OurTestBlock2 testblock3 = ^(NSInteger value){
+        return [NSString stringWithFormat:@"string from my Ourtestblock2 %ld", (long)value ];
+    };
+    
+    NSString * ans = testblock3(4);
+    NSLog(@"%@", ans); 
+    
+    testblock2();
+    
+    
+    ASObject* obj = [[ASObject alloc] init];
+    
+    __weak ASObject* obj1 = obj; // чтобы удалилось после исполнения в блоке
+    obj.name = @"Roma";
+    
+    OurTestBlock temp = ^{
+        obj.name = @"denis";
+        NSLog(@"%@", obj1.name);
+    };
+    
+    self.block = temp;
+    
+    self.block();
+      */
+    
+    ASObject* obj = [[ASObject alloc] init];
+    obj.objBlock();
+    obj.name = @"obj";
+    obj.objBlock();
+    self.name = @"app";
+    obj.objBlock();
+    
+    /*
+    [obj testMethod:^{
+        NSLog(@"my name %@", self.name); // self относится к appdelegate
+    }];
+     */
+    
     return YES;
+}
+
+- (void) test {
+    NSLog(@"test");
+}
+
+- (void) testBlockMethod: (void (^)(void)) block {
+    NSLog(@"TestBlockMethod");
+    block();
+}
+
+- (void) testBlockMethod2: (void (^)(void)) block {
+    NSLog(@"TestBlockMethod");
+    block();
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
